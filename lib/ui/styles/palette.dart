@@ -21,7 +21,7 @@ class Palette {
   static const Color primary = Color(0xFF56B143);
   static const Color secondary = Color(0xFF389B4E);
   static const Color background = Color(0xFFF3F3F3);
-  static const Color backgroundDart = Color(0xFF222222);
+  static const Color backgroundDark = Color(0xFF222222);
 
   // Black
   static const Color black = Color(0xFF000000);

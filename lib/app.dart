@@ -6,12 +6,12 @@ import 'package:football_app/core/core.dart';
 
 class App extends StatelessWidget {
   final BaseApiClient apiClient;
-  // final BaseStockRepository stockRepository;
+  final BaseCompetitionRepository competitionRepository;
 
   const App({
     Key? key,
     required this.apiClient,
-    // required this.stockRepository,
+    required this.competitionRepository,
   }) : super(key: key);
 
   @override
@@ -21,12 +21,18 @@ class App extends StatelessWidget {
         RepositoryProvider(
           create: (context) => apiClient,
         ),
-        // RepositoryProvider(
-        //   create: (context) => stockRepository,
-        // ),
+        RepositoryProvider(
+          create: (context) => competitionRepository,
+        ),
       ],
       child: MultiBlocProvider(
         providers: [
+          BlocProvider(
+            create: (context) => AppSetupCubit()..initialize(),
+          ),
+          BlocProvider(
+            create: (context) => TabCubit(),
+          ),
           BlocProvider(
             create: (context) => AuthenticationDataCubit(
               appSetupCubit: context.read<AppSetupCubit>(),

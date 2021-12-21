@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:football_app/app.dart';
 import 'package:football_app/common/common.dart';
 import 'package:football_app/core/core.dart';
+import 'package:football_app/core/repository/competition/base_competition_repository.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,10 +17,11 @@ void main() {
   final String _baseUrl = EnvConfig.BASE_PROD_URL;
 
   // Repositories instantiation
-  // final BaseStockRepository _stockRepository = StockRepository(
-  //   baseUrl: _baseUrl,
-  //   apiClient: _apiClient,
-  // );
+  final BaseCompetitionRepository _competitionRepository =
+      CompetitionRepository(
+    baseUrl: _baseUrl,
+    apiClient: _apiClient,
+  );
 
   // Disable Landscape Mode
   // SystemChrome.setPreferredOrientations(
@@ -32,7 +34,7 @@ void main() {
         //Client
         apiClient: _apiClient,
         //Repository
-        // stockRepository: _stockRepository,
+        competitionRepository: _competitionRepository,
       ),
     ),
     (error, stackTrace) => log(error.toString(), stackTrace: stackTrace),
