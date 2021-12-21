@@ -5,10 +5,16 @@ import 'package:football_app/core/core.dart';
 import 'package:football_app/ui/ui.dart';
 
 class DetailScreen extends StatelessWidget {
-  const DetailScreen({Key? key}) : super(key: key);
+  DetailScreen({Key? key}) : super(key: key);
+
+  Competition? argsData;
 
   @override
   Widget build(BuildContext context) {
+    if (ModalRoute.of(context)!.settings.arguments is Competition) {
+      argsData = ModalRoute.of(context)!.settings.arguments as Competition;
+    }
+
     return BlocBuilder<TabCubit, DetailTab>(
       builder: (context, state) {
         return Scaffold(
@@ -93,21 +99,31 @@ class DetailScreen extends StatelessWidget {
               ),
             ],
           ),
-          body: _buildContent(state),
+          body: _buildContent(
+            state,
+            argsData: argsData,
+          ),
         );
       },
     );
   }
 
-  Widget _buildContent(DetailTab state) {
+  Widget _buildContent(
+    DetailTab state, {
+    Competition? argsData,
+  }) {
     if (state == DetailTab.standing) {
-      return const SafeArea(
-        child: StandingScreen(),
+      return SafeArea(
+        child: StandingScreen(
+          data: argsData,
+        ),
       );
     }
     if (state == DetailTab.match) {
-      return const SafeArea(
-        child: MatchScreen(),
+      return SafeArea(
+        child: MatchScreen(
+          data: argsData,
+        ),
       );
     }
 

@@ -23,6 +23,16 @@ void main() {
     apiClient: _apiClient,
   );
 
+  final BaseStandingRepository _standingRepository = StandingRepository(
+    baseUrl: _baseUrl,
+    apiClient: _apiClient,
+  );
+
+  final BaseMatchRepository _matchRepository = MatchRepository(
+    baseUrl: _baseUrl,
+    apiClient: _apiClient,
+  );
+
   // Disable Landscape Mode
   // SystemChrome.setPreferredOrientations(
   //   [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown],
@@ -35,6 +45,8 @@ void main() {
         apiClient: _apiClient,
         //Repository
         competitionRepository: _competitionRepository,
+        standingRepository: _standingRepository,
+        matchRepository: _matchRepository,
       ),
     ),
     (error, stackTrace) => log(error.toString(), stackTrace: stackTrace),

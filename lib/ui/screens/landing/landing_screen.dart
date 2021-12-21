@@ -138,6 +138,9 @@ class LandingView extends StatelessWidget {
                   Navigator.pushNamed(
                     context,
                     RouteName.detailScreen,
+                    arguments: ScreenArgument(
+                      data: singleData,
+                    ),
                   );
                 },
               );

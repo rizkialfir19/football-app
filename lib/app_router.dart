@@ -48,9 +48,9 @@ class AppRouter {
           builder: (_) => args?.bloc != null
               ? BlocProvider.value(
                   value: args!.bloc!,
-                  child: const DetailScreen(),
+                  child: DetailScreen(),
                 )
-              : const DetailScreen(),
+              : DetailScreen(),
         );
 
       case RouteName.standingScreen:
