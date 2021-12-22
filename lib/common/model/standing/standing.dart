@@ -43,7 +43,7 @@ class Standing extends BaseModel {
 
     return Standing(
       position: json['position'],
-      team: Team.fromJson(json['name']),
+      team: Team.fromJson(json['team']),
       playedGames: json['playedGames'],
       won: json['won'],
       draw: json['draw'],

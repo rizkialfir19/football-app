@@ -15,10 +15,20 @@ class MatchRepository extends BaseMatchRepository {
   }) async {
     List<Match> _results = [];
 
+    DateTime now = DateTime.now();
+    DateTime end = now.add(const Duration(days: 14));
+
+    String formattedDateFrom = DateFormat('yyyy-MM-dd').format(now);
+    String formattedDateTo = DateFormat('yyyy-MM-dd').format(end);
+
     Response fetchData = await apiClient.get(
       baseUrl + Url.competitionRepository + "/$competitionId/matches",
       headers: {
         "X-auth-token": EnvConfig.API_TOKEN,
+      },
+      queryParams: {
+        "dateFrom": formattedDateFrom,
+        "dateTo": formattedDateTo,
       },
     );
 

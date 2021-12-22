@@ -23,7 +23,7 @@ class StandingRepository extends BaseStandingRepository {
     );
 
     if (fetchData.data != null) {
-      List _rawData = fetchData.data['standings'];
+      List _rawData = fetchData.data['standings'][0]['table'];
       for (Map singleData in _rawData) {
         _results.add(
           Standing.fromJson(
