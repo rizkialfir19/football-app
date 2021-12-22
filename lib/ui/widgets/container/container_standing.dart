@@ -15,106 +15,104 @@ class ContainerStanding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          SizedBox(
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        SizedBox(
+          width: MediaQuery.of(context).size.width / 2,
+          child: Row(
+            children: [
+              Text(
+                "${index + 1}",
+                style: FontHelper.h7Regular(),
+              ),
+              const SizedBox(
+                width: 5.0,
+              ),
+              SvgPicture.network(
+                singleData?.team?.crestUrl ?? Images.imageNetworkPlaceholder,
+                fit: BoxFit.contain,
+                height: 25.0,
+                width: 25.0,
+                placeholderBuilder: (BuildContext context) => Container(
+                  height: 25.0,
+                  width: 25.0,
+                  padding: const EdgeInsets.all(5.0),
+                  child: const CircularProgressIndicator(
+                    color: Palette.secondary,
+                  ),
+                ),
+              ),
+              const SizedBox(
+                width: 5.0,
+              ),
+              Expanded(
+                child: Text(
+                  singleData?.team?.name ?? "-",
+                  style: FontHelper.h7Regular(),
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ],
+          ),
+        ),
+        Expanded(
+          child: SizedBox(
             width: MediaQuery.of(context).size.width / 2,
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
-                  "${index + 1}",
+                  singleData?.points.toString() ?? "-",
                   style: FontHelper.h7Regular(),
                 ),
                 const SizedBox(
-                  width: 5.0,
+                  width: 10.0,
                 ),
-                SvgPicture.network(
-                  singleData?.team?.crestUrl ?? Images.imageNetworkPlaceholder,
-                  fit: BoxFit.contain,
-                  height: 25.0,
-                  width: 25.0,
-                  placeholderBuilder: (BuildContext context) => Container(
-                    height: 25.0,
-                    width: 25.0,
-                    padding: const EdgeInsets.all(5.0),
-                    child: const CircularProgressIndicator(
-                      color: Palette.secondary,
-                    ),
-                  ),
+                Text(
+                  singleData?.playedGames.toString() ?? "-",
+                  style: FontHelper.h7Regular(),
                 ),
                 const SizedBox(
-                  width: 5.0,
+                  width: 10.0,
                 ),
-                Expanded(
-                  child: Text(
-                    singleData?.team?.name ?? "-",
-                    style: FontHelper.h7Regular(),
-                    overflow: TextOverflow.ellipsis,
-                  ),
+                Text(
+                  singleData?.won.toString() ?? "-",
+                  style: FontHelper.h7Regular(),
+                ),
+                const SizedBox(
+                  width: 10.0,
+                ),
+                Text(
+                  singleData?.draw.toString() ?? "-",
+                  style: FontHelper.h7Regular(),
+                ),
+                const SizedBox(
+                  width: 10.0,
+                ),
+                Text(
+                  singleData?.lost.toString() ?? "-",
+                  style: FontHelper.h7Regular(),
+                ),
+                const SizedBox(
+                  width: 10.0,
+                ),
+                Text(
+                  singleData?.goalsFor.toString() ?? "-",
+                  style: FontHelper.h7Regular(),
+                ),
+                const SizedBox(
+                  width: 10.0,
+                ),
+                Text(
+                  singleData?.goalsAgainst.toString() ?? "-",
+                  style: FontHelper.h7Regular(),
                 ),
               ],
             ),
           ),
-          Expanded(
-            child: SizedBox(
-              width: MediaQuery.of(context).size.width / 2,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    singleData?.points.toString() ?? "-",
-                    style: FontHelper.h7Regular(),
-                  ),
-                  const SizedBox(
-                    width: 10.0,
-                  ),
-                  Text(
-                    singleData?.playedGames.toString() ?? "-",
-                    style: FontHelper.h7Regular(),
-                  ),
-                  const SizedBox(
-                    width: 10.0,
-                  ),
-                  Text(
-                    singleData?.won.toString() ?? "-",
-                    style: FontHelper.h7Regular(),
-                  ),
-                  const SizedBox(
-                    width: 10.0,
-                  ),
-                  Text(
-                    singleData?.draw.toString() ?? "-",
-                    style: FontHelper.h7Regular(),
-                  ),
-                  const SizedBox(
-                    width: 10.0,
-                  ),
-                  Text(
-                    singleData?.lost.toString() ?? "-",
-                    style: FontHelper.h7Regular(),
-                  ),
-                  const SizedBox(
-                    width: 10.0,
-                  ),
-                  Text(
-                    singleData?.goalsFor.toString() ?? "-",
-                    style: FontHelper.h7Regular(),
-                  ),
-                  const SizedBox(
-                    width: 10.0,
-                  ),
-                  Text(
-                    singleData?.goalsAgainst.toString() ?? "-",
-                    style: FontHelper.h7Regular(),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

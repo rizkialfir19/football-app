@@ -97,7 +97,7 @@ class StandingView extends StatelessWidget {
           child: ListView.builder(
             physics: const ClampingScrollPhysics(),
             shrinkWrap: true,
-            itemCount: 10,
+            itemCount: _resultsData?.length,
             itemBuilder: (context, index) {
               Standing? singleData = _resultsData?[index];
 

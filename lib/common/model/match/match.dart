@@ -6,6 +6,7 @@ class Match extends BaseModel {
   final Score? score;
   final String? awayTeamName;
   final String? homeTeamName;
+  final bool? isShowDate;
 
   Match({
     this.utcDate,
@@ -13,12 +14,14 @@ class Match extends BaseModel {
     this.score,
     this.awayTeamName,
     this.homeTeamName,
+    this.isShowDate = true,
   }) : super({
           "utcDate": utcDate,
           "status": status,
           "score": score,
           "homeTeamName": homeTeamName,
           "awayTeamName": awayTeamName,
+          "isShowDate": isShowDate,
         });
 
   factory Match.fromJson(Map<String, dynamic>? json) {
@@ -42,6 +45,7 @@ class Match extends BaseModel {
     Score? score,
     String? awayTeamName,
     String? homeTeamName,
+    bool? isShowDate,
   }) {
     return Match(
       utcDate: utcDate ?? this.utcDate,
@@ -49,6 +53,7 @@ class Match extends BaseModel {
       score: score ?? this.score,
       awayTeamName: awayTeamName ?? this.awayTeamName,
       homeTeamName: homeTeamName ?? this.homeTeamName,
+      isShowDate: isShowDate ?? this.isShowDate,
     );
   }
 }
