@@ -1,5 +1,8 @@
-d06505b,Rizki Alfi Ramdhani,3 minutes ago,add readme
-06655b5,Rizki Alfi Ramdhani,13 minutes ago,feat(detail competition): tab matches feature
+e274919,Rizki Alfi Ramdhani,24 seconds ago,sanitize code
+44c0358,Rizki Alfi Ramdhani,39 seconds ago,fix(android release): fix permission for release mode
+371ee01,Rizki Alfi Ramdhani,11 minutes ago,update readme
+d06505b,Rizki Alfi Ramdhani,18 minutes ago,add readme
+06655b5,Rizki Alfi Ramdhani,28 minutes ago,feat(detail competition): tab matches feature
 9e7fe27,Rizki Alfi Ramdhani,2 hours ago,feat(detail competition): page detail competition (tab standing features), WIP tab matches
 7c9b445,Rizki Alfi Ramdhani,17 hours ago,feat(detail competition): make models, make repository, inject them in main & app for standings and matches endpoint
 f27c7dc,Rizki Alfi Ramdhani,24 hours ago,feat(landing screen): landing screen to load list of competition, init page detail screen and the tab of detail screen
