@@ -25,6 +25,7 @@ matches in the competition. You can see the requirements in the Details section.
 1. You can clone this repository, and then do pub get from you terminal or use the button in Android Studio (If you use Android Studio. If not, do that from terminal).
 2. Must have an physical devices to run, or you can use emulator/simulator.
 3. To debug this project you need to use Flutter 2.
+4. If you want to release this app, you can see [This](https://docs.flutter.dev/deployment/android)
 
 ## Feature of The Apps
 1. You can see the list of the Football Competition.
